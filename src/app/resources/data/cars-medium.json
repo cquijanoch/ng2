@@ -1,0 +1,17 @@
+[
+    /* vin?;
+    year?;
+    brand?;
+    color?;
+    price?;
+    saleDate?; */
+    {
+        "vin": "2534",
+        "year": 1998,
+        "brand": "Toyota",
+        "color": "Blanco",
+        "price": 20000,
+        "saleDate": "01/01/2007"
+    }
+    
+]
