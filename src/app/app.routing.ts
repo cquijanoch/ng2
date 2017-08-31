@@ -9,13 +9,16 @@ import { TableListComponent } from './componentsDash/table-list/table-list.compo
 import { IconsComponent } from './componentsDash/icons/icons.component';
 import { NotificationsComponent } from './componentsDash/notifications/notifications.component';
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
+import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
+
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'prueba',  component: TableDemoComponent }
+    { path: 'prueba',  component: TableDemoComponent },
+    { path: 'modales',  component: AlertDemoComponent }
 ];
 
 @NgModule({
