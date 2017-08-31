@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 /* import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
  */
+
+import { ConfirmComponent } from './modales/confirm/confirm.component';
 import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './componentsDash/dashboard/dashboard.component';
@@ -36,6 +38,7 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     TableDemoComponent,
     AlertDemoComponent, 
     AlertComponent,     
+    ConfirmComponent,
     /* NgTableComponent,
     NgTableFilteringDirective,
     NgTablePagingDirective,
@@ -55,7 +58,7 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     BootstrapModalModule, 
 
   ],
-  entryComponents:[AlertDemoComponent, AlertComponent],
+  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

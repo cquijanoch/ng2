@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TableData} from '../tabla/table-data';
-
+import { ConfirmComponent } from '../../modales/confirm/confirm.component';
+import { DialogService } from "ng2-bootstrap-modal";
 
 @Component({
   selector: 'table-demo',
@@ -36,7 +37,7 @@ import {TableData} from '../tabla/table-data';
   
     private data:Array<any> = TableData;
   
-    public constructor() {
+    public constructor(private dialogService:DialogService) {
       this.length = this.data.length;
     }
   
@@ -135,4 +136,24 @@ import {TableData} from '../tabla/table-data';
     public onCellClick(data: any): any {
       console.log(data);
     }
+
+    showConfirm() {
+      let disposable = this.dialogService.addDialog(ConfirmComponent, {
+          title:'Confirm title', 
+          message:'Confirm message'})
+          .subscribe((isConfirmed)=>{
+              //We get dialog result
+              if(isConfirmed) {
+                  alert('accepted');
+              }
+              else {
+                  alert('declined');
+              }
+          });
+      //We can close dialog calling disposable.unsubscribe();
+      //If dialog was not closed manually close it by timeout
+      setTimeout(()=>{
+          disposable.unsubscribe();
+      },10000);
+  }
   }
