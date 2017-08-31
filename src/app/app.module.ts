@@ -19,6 +19,7 @@ import { IconsComponent } from './componentsDash/icons/icons.component';
 import { NotificationsComponent } from './componentsDash/notifications/notifications.component';
 
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
+import { TablaToFirmarComponent } from './myComponents/tablaToFirmar/tablaToFirmar.component';
 //import { ModalTiny } from './myComponents/modal/modaltiny.component';
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
@@ -36,6 +37,7 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     IconsComponent,
     NotificationsComponent,
     TableDemoComponent,
+    TablaToFirmarComponent,
     AlertDemoComponent, 
     AlertComponent,     
     ConfirmComponent,
