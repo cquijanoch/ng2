@@ -22,7 +22,7 @@ const routes: Routes =[
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'prueba',  component: TableDemoComponent },
     { path: 'modales',  component: AlertDemoComponent },
-    { path: 'realizarFirma',  component: TablaToFirmarComponent }
+    { path: 'realizarFirma',  component: TablaToFirmarComponent },
     { path: 'registroSIAF',  component: RegistroSIAFComponent }
 ];
 
