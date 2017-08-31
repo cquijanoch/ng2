@@ -11,6 +11,8 @@ import { NotificationsComponent } from './componentsDash/notifications/notificat
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 
+import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
+
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -18,7 +20,8 @@ const routes: Routes =[
     { path: 'icons',          component: IconsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'prueba',  component: TableDemoComponent },
-    { path: 'modales',  component: AlertDemoComponent }
+    { path: 'modales',  component: AlertDemoComponent },
+    { path: 'registroSIAF',  component: RegistroSIAFComponent }
 ];
 
 @NgModule({

@@ -24,6 +24,9 @@ import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { AlertComponent } from './myComponents/modal/alert.component';
 
+import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
+import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.component';
+
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; 
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
@@ -39,6 +42,8 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     AlertDemoComponent, 
     AlertComponent,     
     ConfirmComponent,
+    RegistroSIAFComponent,
+    ListarOrdenesComponent,
     /* NgTableComponent,
     NgTableFilteringDirective,
     NgTablePagingDirective,
@@ -58,7 +63,7 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     BootstrapModalModule, 
 
   ],
-  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent],
+  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

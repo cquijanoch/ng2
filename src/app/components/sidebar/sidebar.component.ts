@@ -17,7 +17,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
     { path: 'prueba', title: 'probando',  icon:'dashboard', class: '' },
     { path: 'modales', title: 'Modal Alert',  icon:'dashboard', class: '' },
-
+    { path: 'registroSIAF', title: 'Registro SIAF',  icon:'dashboard', class: '' },
 ];
 
 @Component({
