@@ -1,0 +1,8 @@
+[
+    {
+        "id_usuario": 1,
+        "login": "demo",
+        "password": "demo",
+        "id_rol": 1
+    }
+]

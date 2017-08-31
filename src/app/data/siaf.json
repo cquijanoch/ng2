@@ -1,0 +1,18 @@
+[
+    {
+        "id_siaf": 1,
+        "nro_expediente": 20,
+        "id_orden": 1,
+        "fase": "C",
+        "certificado_anual": "",
+        "tipo_documento": 1,
+        "nro_documento": "",
+        "fecha_documento": "",
+        "monto": 10.00,
+        "estado": "A",
+        "id_usuario1": 0,
+        "id_usuario2": 0
+
+        
+    }
+]

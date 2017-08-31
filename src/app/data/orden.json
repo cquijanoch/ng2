@@ -1,0 +1,10 @@
+[
+    {
+        "id_orden": 1,
+        "nro_orden": 10.00,
+        "id_proveedor": 1,
+        "fecha": "",
+        "observacion": ""
+        
+    }
+]

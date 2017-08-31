@@ -1,0 +1,14 @@
+[
+    {
+        "id_ord_det": 1,
+        "id_orden": 10.00,
+        "id_articulo": 1,
+        "id_unidad": 1,
+        "cantidad": 10,
+        "precio_unitario": 10.00,
+        "valor_venta": 10.00,
+        "meta": 15,
+        "partida": "2.1.1.2.3.1"
+        
+    }
+]
