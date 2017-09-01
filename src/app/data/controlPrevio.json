@@ -1,0 +1,22 @@
+// [
+//     {
+//         "nroOrdenCompra": 12235,
+//         "nroExpediente": 130,
+//         "proveedor": 1,
+//         "monto": 1000.00,
+//         "fecha": "",
+//         "observacion": "",
+//         "estado": "A",
+//         "action": ""
+//     },
+//     {
+//         "nroOrdenCompra": 12236,
+//         "nroExpediente": 131,
+//         "proveedor": 1,
+//         "monto": 1030.00,
+//         "fecha": "",
+//         "observacion": "",
+//         "estado": "A",
+//         "action": ""
+//     }
+// ]

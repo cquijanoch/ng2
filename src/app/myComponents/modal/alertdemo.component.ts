@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertComponent } from './alert.component';
+import { DatosOrdenComponent } from '../../modales/controlprevio/modalcontrolprevio.component';
 import { DialogService } from "ng2-bootstrap-modal";
 
 //import Timer = NodeJS.Timer;
@@ -50,6 +51,15 @@ import { DialogService } from "ng2-bootstrap-modal";
       <button class="btn btn-default btn-block" (click)=showAlert4()>Show alert</button>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-4 text-right">
+      <b>TEST: </b>
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-default btn-block" (click)=showAlert5()>Mostrar modall</button>
+    </div>
+  </div>
+
   <br>
   <br>
 </div>
@@ -76,6 +86,11 @@ export class AlertDemoComponent {
   showAlert4() {
     this.dialogService.addDialog(AlertComponent, { message:'Dialog with red backdrop' }, { backdropColor: 'rgba(255, 0, 0, 0.5)' });
   }
+
+  showAlert5() {
+    this.dialogService.addDialog(DatosOrdenComponent, { title:'Datos de Orden' }, { backdropColor: 'rgba(80,80, 80, 0.5)' });
+  }
+
 
 }
 

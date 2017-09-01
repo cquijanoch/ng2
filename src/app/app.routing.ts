@@ -13,7 +13,7 @@ import { TablaToFirmarComponent } from './myComponents/tablaToFirmar/tablaToFirm
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 
 import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
-
+import { ControlPrevioComponent } from './myComponents/control-previo/control-previo.component';
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -23,7 +23,8 @@ const routes: Routes =[
     { path: 'prueba',  component: TableDemoComponent },
     { path: 'modales',  component: AlertDemoComponent },
     { path: 'realizarFirma',  component: TablaToFirmarComponent },
-    { path: 'registroSIAF',  component: RegistroSIAFComponent }
+    { path: 'registroSIAF',  component: RegistroSIAFComponent },
+    { path: 'controlprevio',  component: ControlPrevioComponent }
 ];
 
 @NgModule({
