@@ -9,7 +9,10 @@ import { TableListComponent } from './componentsDash/table-list/table-list.compo
 import { IconsComponent } from './componentsDash/icons/icons.component';
 import { NotificationsComponent } from './componentsDash/notifications/notifications.component';
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
+import { TablaToFirmarComponent } from './myComponents/tablaToFirmar/tablaToFirmar.component';
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
+
+import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
@@ -18,7 +21,9 @@ const routes: Routes =[
     { path: 'icons',          component: IconsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'prueba',  component: TableDemoComponent },
-    { path: 'modales',  component: AlertDemoComponent }
+    { path: 'modales',  component: AlertDemoComponent },
+    { path: 'realizarFirma',  component: TablaToFirmarComponent },
+    { path: 'registroSIAF',  component: RegistroSIAFComponent }
 ];
 
 @NgModule({

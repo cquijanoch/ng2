@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
+import { TableData } from './tabladata';
 
 export interface DatosOrdenModel {
     title: string;
@@ -10,42 +11,20 @@ export interface DatosOrdenModel {
 }
 
 @Component({
-  selector: 'datosordenmodal',
-  template: `<div class="modal-dialog">
-                <div class="modal-content">
-                   <div class="modal-header">
-                     <button type="button" class="close" (click)="close()" >&times;</button>
-                     <h4 class="modal-title">{{title || 'Alert!'}}</h4>
-                   </div>
-                   <div class="modal-body">
-                     <div class="form-group form-black label-floating is-empty">
-                         <label class="control-label">Orden de Compra</label>
-                         <input type="text" class="form-control" >
-                     </div>
-                     <div class="form-group form-black label-floating is-empty">
-                         <label class="control-label">Proveedor</label>
-                         <input type="text" class="form-control" >
-                     </div>
-                     <div class="form-group form-black label-floating is-empty">
-                         <label class="control-label">Fecha</label>
-                         <input type="date" class="form-control" >
-                     </div>
-                     <div class="form-group form-black label-floating is-empty">
-                         <label class="control-label">Observacion</label>
-                         <textarea class="form-control" rows="5"></textarea>
-                     </div>
-                     <div class="form-group form-black label-floating is-empty">
-                         <label class="control-label">Fecha</label>
-                         <input type="date" class="form-control" >
-                     </div>
-                   </div>
-                   <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" >Aprobar</button>
-                        <button type="button" class="btn btn-primary" >Desaprobar</button>
-                        <button type="button" class="btn btn-primary" (click)="close()">Guardar</button>
-                   </div>
-                </div>
-             </div>`
+    selector: 'datosordenmodal',
+    templateUrl:'./modalcontrolprevio.component.html', 
+    styles: [`
+            .modal-dialog{
+                width: 850px;
+                height  : 350px;
+            }
+            .modal-body {
+                width: 850px;
+                height: 350px;
+                overflow-y: auto;
+            }
+            `],
+
 })
 export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> implements DatosOrdenModel {
     title: string;
@@ -54,8 +33,154 @@ export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> 
     fecha: string;
     observacion: string;
 
+    //tabla
+    private data: Array<any> = TableData;
+
+    public rows: Array<any> = [];
+    public columns: Array<any> = [
+        { title: 'Articulo', name: 'articulo', filtering: { filterString: '', placeholder: 'Filter by articulo' } },
+        {
+            title: 'Unidad',
+            name: 'unidad',
+            filtering: { filterString: '', placeholder: 'Filter by unidad' }
+        },
+          {
+            title: 'Precio',
+            name: 'precio',
+            filtering: { filterString: '', placeholder: 'Filter by precio' }
+          },
+        {
+            title: 'Meta',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by meta' }
+        },
+        {
+            title: 'Partida',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by partida' }
+        },
+
+    ];
+    public page: number = 1;
+    public itemsPerPage: number = 10;
+    public maxSize: number = 5;
+    public numPages: number = 1;
+    public length: number = 0;
+
+    public config: any = {
+        paging: true,
+        sorting: { columns: this.columns },
+        filtering: { filterString: '' },
+        className: ['table-striped', 'table-bordered']
+    };
+
     constructor(dialogService: DialogService) {
-    super(dialogService);
-  }
+        super(dialogService);
+
+        //informacion de tabla
+        this.length = this.data.length;
+    }
+
+    
+    // Informacion para la tabla
+
+
+    public ngOnInit(): void {
+        this.onChangeTable(this.config);
+    }
+
+    public changePage(page: any, data: Array<any> = this.data): Array<any> {
+        let start = (page.page - 1) * page.itemsPerPage;
+        let end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
+        return data.slice(start, end);
+    }
+
+    public changeSort(data: any, config: any): any {
+        if (!config.sorting) {
+            return data;
+        }
+
+        let columns = this.config.sorting.columns || [];
+        let columnName: string = void 0;
+        let sort: string = void 0;
+
+        for (let i = 0; i < columns.length; i++) {
+            if (columns[i].sort !== '' && columns[i].sort !== false) {
+                columnName = columns[i].name;
+                sort = columns[i].sort;
+            }
+        }
+
+        if (!columnName) {
+            return data;
+        }
+
+        // simple sorting
+        return data.sort((previous: any, current: any) => {
+            if (previous[columnName] > current[columnName]) {
+                return sort === 'desc' ? -1 : 1;
+            } else if (previous[columnName] < current[columnName]) {
+                return sort === 'asc' ? -1 : 1;
+            }
+            return 0;
+        });
+    }
+
+    public changeFilter(data: any, config: any): any {
+        let filteredData: Array<any> = data;
+        this.columns.forEach((column: any) => {
+            if (column.filtering) {
+                filteredData = filteredData.filter((item: any) => {
+                    return item[column.name].match(column.filtering.filterString);
+                });
+            }
+        });
+
+        if (!config.filtering) {
+            return filteredData;
+        }
+
+        if (config.filtering.columnName) {
+            return filteredData.filter((item: any) =>
+                item[config.filtering.columnName].match(this.config.filtering.filterString));
+        }
+
+        let tempArray: Array<any> = [];
+        filteredData.forEach((item: any) => {
+            let flag = false;
+            this.columns.forEach((column: any) => {
+                if (item[column.name].toString().match(this.config.filtering.filterString)) {
+                    flag = true;
+                }
+            });
+            if (flag) {
+                tempArray.push(item);
+            }
+        });
+        filteredData = tempArray;
+
+        return filteredData;
+    }
+
+    public onChangeTable(config: any, page: any = { page: this.page, itemsPerPage: this.itemsPerPage }): any {
+        if (config.filtering) {
+            Object.assign(this.config.filtering, config.filtering);
+        }
+
+        if (config.sorting) {
+            Object.assign(this.config.sorting, config.sorting);
+        }
+
+        let filteredData = this.changeFilter(this.data, this.config);
+        let sortedData = this.changeSort(filteredData, this.config);
+        this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
+        this.length = sortedData.length;
+    }
+
+    public onCellClick(data: any): any {
+        console.log(data);
+    }
+
+
 }
 
