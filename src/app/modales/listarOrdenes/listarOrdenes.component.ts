@@ -1,67 +1,83 @@
 import { Component } from '@angular/core';
-import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
-import { TableData } from './tabladata';
+import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 
-export interface DatosOrdenModel {
+import { TableData } from '../../myComponents/tabla/table-data';
+
+export interface ConfirmModel {
     title: string;
-    ordcompra: string;
-    proveedor: string;
-    fecha: string;
-    observacion: string;
+    message: string;
 }
 
 @Component({
-    selector: 'datosordenmodal',
-    templateUrl:'./modalcontrolprevio.component.html', 
+    selector: 'modal-listarOrdenes',
+    templateUrl: './listarOrdenes.component.html',
     styles: [`
-            .modal-dialog{
-                width: 850px;
-                height  : 350px;
-            }
-            .modal-body {
-                width: 850px;
-                height: 350px;
-                overflow-y: auto;
-            }
-            `]
+    .modal-dialog{
+        width: 850px;
+        height  : 350px;
+        overflow-y: initial !important
+    }
+    .modal-body {
+        width: 850px;
+        height: 350px;
+        overflow-y: auto;
+      }
+  `],
 })
-export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> implements DatosOrdenModel {
+export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
     title: string;
-    ordcompra: string;
-    proveedor: string;
-    fecha: string;
-    observacion: string;
+    message: string;
+
+    orden: Array<any> = [
+        {
+            "id_orden": 1,
+            "nro_orden": 77,
+            "id_proveedor": 0,
+            "fecha": "2017/08/08",
+            "observacion": "",
+            "id_ord_det": 0,
+            "id_articulo": 0,
+            "id_unidad": 0,
+            "cantidad": 0,
+            "precio_unitario": 0,
+            "valor_venta": 0,
+            "meta": 15,
+            "partida": "2.1.1.2.3.1"
+        },
+        {
+            "id_orden": 2,
+            "nro_orden": 78,
+            "id_proveedor": 10,
+            "fecha": "2017/09/08",
+            "observacion": "segundo",
+            "id_ord_det": 0,
+            "id_articulo": 0,
+            "id_unidad": 0,
+            "cantidad": 1,
+            "precio_unitario": 10,
+            "valor_venta": 10,
+            "meta": 115,
+            "partida": "2.1.1.2.3.2"
+        }
+    ];
 
     //tabla
-    private data: Array<any> = TableData;
+    //private data: Array<any> = TableData;
+    private data: Array<any> = this.orden;
 
     public rows: Array<any> = [];
     public columns: Array<any> = [
-        { title: 'Articulo', name: 'articulo', filtering: { filterString: '', placeholder: 'Filter by articulo' } },
-        {
-            title: 'Unidad',
-            name: 'unidad',
-            filtering: { filterString: '', placeholder: 'Filter by unidad' }
-        },
-          {
-            title: 'Precio',
-            name: 'precio',
-            filtering: { filterString: '', placeholder: 'Filter by precio' }
-          },
-        {
-            title: 'Meta',
-            name: 'meta',
-            filtering: { filterString: '', placeholder: 'Filter by meta' }
-        },
-        {
-            title: 'Partida',
-            name: 'partida',
-            filtering: { filterString: '', placeholder: 'Filter by partida' }
-        },
-
+        { title: 'Nro Orden', name: 'nro_orden' },
+        { title: 'Id Proveedor', name: 'id_proveedor', sort: false },
+        { title: 'Fecha', className: ['office-header', 'text-success'], name: 'fecha' },
+        { title: 'Observacion', name: 'observacion', sort: '' , filtering: {filterString: '', placeholder: 'Filtrar por Observacion'}},
+        { title: 'Cantidad', className: 'text-warning', name: 'cantidad' },
+        { title: 'Precio Unitario', name: 'precio_unitario', sort: '' },
+        { title: 'Meta', name: 'meta', sort: '' },
+        { title: 'Partida', name: 'partida', filtering: {filterString: '', placeholder: 'Filtrar por Partida'}}
     ];
     public page: number = 1;
-    public itemsPerPage: number = 10;
+    public itemsPerPage: number = 5;
     public maxSize: number = 5;
     public numPages: number = 1;
     public length: number = 0;
@@ -79,10 +95,14 @@ export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> 
         //informacion de tabla
         this.length = this.data.length;
     }
+    confirm() {
+        // we set dialog result as true on click on confirm button, 
+        // then we can get dialog result from caller code 
+        this.result = true;
+        this.close();
+    }
 
-    
     // Informacion para la tabla
-
 
     public ngOnInit(): void {
         this.onChangeTable(this.config);
@@ -179,6 +199,5 @@ export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> 
     public onCellClick(data: any): any {
         console.log(data);
     }
-
 
 }

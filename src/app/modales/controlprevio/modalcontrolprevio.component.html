@@ -1,0 +1,78 @@
+<div class="modal-dialog">
+                <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" (click)="close()" >&times;</button>
+                     <h4 class="modal-title">{{title || 'Alert!'}}</h4>
+                   </div>
+                   <div class="modal-body">
+                    
+                     <div class="form-group form-black label-floating is-empty">
+                         <label >Orden de Compra</label>
+                         <input type="text" class="form-control" >
+                     </div>
+                     <div class="form-group form-black label-floating is-empty">
+                         <label>Proveedor</label>
+                         <input type="text" class="form-control" >
+                     </div>
+                     <div class="form-group form-black label-floating is-empty">
+                         <label>Fecha</label>
+                         <input type="date" class="form-control" >
+                     </div>
+                     <div class="form-group form-black label-floating is-empty">
+                         <label >Observacion</label>
+                         <textarea class="form-control" rows="5"></textarea>
+                     </div>
+
+
+            <!-- tabla de ordenes -->
+
+            <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-4">
+                            <input *ngIf="config.filtering" placeholder="Filter all columns"
+                                    [ngTableFiltering]="config.filtering"
+                                    class="form-control"
+                                    (tableChanged)="onChangeTable(config)"/>
+                            </div>
+                        </div>
+                        <br>
+                        <ng-table [config]="config"
+                                    (tableChanged)="onChangeTable(config)"
+                                    (cellClicked)="onCellClick($event)"
+                                    [rows]="rows" [columns]="columns">
+                        </ng-table>
+                        <pagination *ngIf="config.paging"
+                                    class="pagination-sm"
+                                    [(ngModel)]="page"
+                                    [totalItems]="length"
+                                    [itemsPerPage]="itemsPerPage"
+                                    [maxSize]="maxSize"
+                                    [boundaryLinks]="true"
+                                    [rotate]="false"
+                                    (pageChanged)="onChangeTable(config, $event)"
+                                    (numPages)="numPages = $event">
+                        </pagination>
+                        <!-- <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre> -->
+                    </div>
+                </div>
+            
+                <!-- <button class="btn btn-default" (click)=showConfirm()>Confirmar</button> -->
+            </div>
+
+            <!-- fin de tabla -->
+            <div  style="text-align: center;">
+                <div class="btn-group"  >
+                    <label class="radio-inline"><input type="radio" name="optradio" style="color:green;">Aprobar</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" style="color:red;" >Desaprobar</label>
+                </div>                
+            </div>          
+
+                   </div>
+                   <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="close()">Guardar</button>
+                        <button type="button" class="btn btn-default" (click)="close()">Cancelar</button>
+                   </div>
+                </div>
+             </div>`
