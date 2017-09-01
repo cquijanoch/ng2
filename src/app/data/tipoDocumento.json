@@ -1,0 +1,18 @@
+[
+    {
+        "id_tipo_documento": 1,
+        "nombre": "Solicitud"
+    },
+    {
+        "id_tipo_documento": 2,
+        "nombre": "Acta"
+    },
+    {
+        "id_tipo_documento": 3,
+        "nombre": "Informe"
+    },
+    {
+        "id_tipo_documento": 4,
+        "nombre": "Orden de Compra"
+    }
+]
