@@ -5,14 +5,12 @@
         "id_orden": 1,
         "fase": "C",
         "certificado_anual": "",
-        "tipo_documento": 1,
+        "tipo_documento": 4,
         "nro_documento": "",
         "fecha_documento": "",
         "monto": 10.00,
         "estado": "A",
-        "id_usuario1": 0,
-        "id_usuario2": 0
-
-        
+        "id_usuario1": 1,
+        "id_usuario2": 2
     }
 ]

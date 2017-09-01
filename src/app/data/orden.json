@@ -1,10 +1,23 @@
 [
     {
         "id_orden": 1,
-        "nro_orden": 10.00,
+        "nro_orden": 123,
         "id_proveedor": 1,
-        "fecha": "",
+        "fecha": "21/07/2017",
         "observacion": ""
-        
+    },
+    {
+        "id_orden": 2,
+        "nro_orden": 124,
+        "id_proveedor": 8,
+        "fecha": "1/08/2017",
+        "observacion": ""
+    },
+    {
+        "id_orden": 3,
+        "nro_orden": 125,
+        "id_proveedor": 7,
+        "fecha": "2/08/2017",
+        "observacion": ""
     }
 ]

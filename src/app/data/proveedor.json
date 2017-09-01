@@ -22,5 +22,29 @@
         "nombre": "Gloria",
         "telefono": "054-454005",
         "direccion": "Urb. La Rinconada S/N , Hunter"
+    },
+    {
+        "id_proveedor": 5,
+        "nombre": "Mesas sac",
+        "telefono": "054-454025",
+        "direccion": "JR. LOS ANDES NRO. 325 BARRIO LA LAGUNA"
+    },
+    {
+        "id_proveedor": 6,
+        "nombre": "tablas sac",
+        "telefono": "054-454055",
+        "direccion": "JR. FEDERICO SAL Y ROSAS MZA. 107 LOTE. 03"
+    },
+    {
+        "id_proveedor": 7,
+        "nombre": "TyC System sac",
+        "telefono": "054-454005",
+        "direccion": "MZA. J LOTE. 9 A.H. VILLA JUDICIAL"
+    },
+    {
+        "id_proveedor": 8,
+        "nombre": "SystemAQP sac",
+        "telefono": "054-454005",
+        "direccion": "AV. UNIVERSITARIA NRO. S/N ASOC GARAGAY BAJO (ASOC GARAGAY BAJO/AV UNIV CON PS COLCA)"
     }
 ]

@@ -1,8 +1,42 @@
 [
     {
         "id_cat_art": 1,
-        "nombre": "silla",
+        "nombre": "Silla",
         "codigo": "ABC"
-        
+    },
+    {
+        "id_cat_art": 2,
+        "nombre": "Mesa",
+        "codigo": "ME"
+    },
+    {
+        "id_cat_art": 3,
+        "nombre": "Carpeta",
+        "codigo": "CA"
+    },
+    {
+        "id_cat_art": 4,
+        "nombre": "Mueble",
+        "codigo": "MU"
+    },
+    {
+        "id_cat_art": 5,
+        "nombre": "Cañon Multimedia",
+        "codigo": "CM"
+    },
+    {
+        "id_cat_art": 6,
+        "nombre": "Computadoras",
+        "codigo": "COM"
+    },
+    {
+        "id_cat_art": 7,
+        "nombre": "Pizarra",
+        "codigo": "PIZ"
+    },
+    {
+        "id_cat_art": 8,
+        "nombre": "UPS - generador de energia",
+        "codigo": "UPS"
     }
 ]
