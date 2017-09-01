@@ -8,22 +8,61 @@ import { DialogService } from "ng2-bootstrap-modal";
   templateUrl: './registroSIAF.component.html'
   })
   export class RegistroSIAFComponent implements OnInit {
+
+    siaf: Array<any> = [
+      {
+          "id_siaf": 1,
+          "nro_expediente": 20,
+          "id_orden": 0,
+          "fase": "C",
+          "certificado_anual": 0,
+          "tipo_documento": 0,
+          "nro_documento": 0,
+          "fecha_documento": 0,
+          "monto": 10,
+          "estado": "A",
+          "id_usuario1": 0,
+          "id_usuario2": 0
+      },
+      {
+        "id_siaf": 2,
+        "nro_expediente": 30,
+        "id_orden": 0,
+        "fase": "C",
+        "certificado_anual": 0,
+        "tipo_documento": 0,
+        "nro_documento": 0,
+        "fecha_documento": 0,
+        "monto": 100,
+        "estado": "A",
+        "id_usuario1": 0,
+        "id_usuario2": 0
+    }
+  ];
+
     public rows:Array<any> = [];
     public columns:Array<any> = [
-      {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+      {title: 'Nro Expediente', name: 'nro_expediente'},
+      {title: 'Nro Orden', name: 'id_orden'},
+      {title: 'Fase', name: 'fase'},
+      {title: 'Certificado', name: 'certificado_anual'},
+      {title: 'Tipo Documento', name: 'tipo_documento'},
+      {title: 'Nro Documento', name: 'nro_documento'},
+      {title: 'Monto', name: 'monto'},
+      {title: 'Estado', name: 'estado'}
+      
+      /* ,
       {
         title: 'Position',
-        name: 'position',
-        sort: false,
-        filtering: {filterString: '', placeholder: 'Filter by position'}
+        name: 'position'
       },
-      {title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc'},
-      {title: 'Extn.', name: 'ext', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-      {title: 'Start date', className: 'text-warning', name: 'startDate'},
-      {title: 'Salary ($)', name: 'salary'}
+      {title: 'Office', name: 'office'},
+      {title: 'Extn.', name: 'ext'},
+      {title: 'Start date', name: 'startDate'},
+      {title: 'Salary ($)', name: 'salary'} */
     ];
     public page:number = 1;
-    public itemsPerPage:number = 10;
+    public itemsPerPage:number = 5;
     public maxSize:number = 5;
     public numPages:number = 1;
     public length:number = 0;
@@ -35,7 +74,7 @@ import { DialogService } from "ng2-bootstrap-modal";
       className: ['table-striped', 'table-bordered']
     };
   
-    private data:Array<any> = TableData;
+    private data:Array<any> = this.siaf;
   
     public constructor(private dialogService:DialogService) {
       this.length = this.data.length;
@@ -137,10 +176,14 @@ import { DialogService } from "ng2-bootstrap-modal";
       console.log(data);
     }
 
+    public onDoubleClick(data:any): any {
+      console.log('double click');
+    }
+
     buscarOrden() {
       let disposable = this.dialogService.addDialog(ListarOrdenesComponent, {
-          title:'Listar Ordenes', 
-          message:'Confirmar Mensaje'})
+          title:'Listado de Órdenes', 
+          message:'Selecciona una orden'})
           .subscribe((isConfirmed)=>{
               //We get dialog result
               if(isConfirmed) {
