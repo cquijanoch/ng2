@@ -3,10 +3,10 @@
         <div class="row">
             <div class="row">
                 <div class="col-md-4">
-                <input *ngIf="config.filtering" placeholder="Filter all columns"
+                <!-- <input *ngIf="config.filtering" placeholder="Filter all columns"
                         [ngTableFiltering]="config.filtering"
                         class="form-control"
-                        (tableChanged)="onChangeTable(config)"/>
+                        (tableChanged)="onChangeTable(config)"/> -->
                 <button class="btn btn-default" (click)=buscarOrden()> Buscar Orden </button>
                 </div>
             </div>
@@ -14,6 +14,7 @@
             <ng-table [config]="config"
                         (tableChanged)="onChangeTable(config)"
                         (cellClicked)="onCellClick($event)"
+                        (doubleClicked)="onDoubleClick($event)"
                         [rows]="rows" [columns]="columns">
             </ng-table>
             <pagination *ngIf="config.paging"

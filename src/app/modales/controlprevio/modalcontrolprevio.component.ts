@@ -56,7 +56,7 @@ export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> 
         },
         {
             title: 'Partida',
-            name: 'meta',
+            name: 'partida',
             filtering: { filterString: '', placeholder: 'Filter by partida' }
         },
 

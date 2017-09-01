@@ -21,11 +21,13 @@ import { NotificationsComponent } from './componentsDash/notifications/notificat
 import { ControlPrevioComponent } from './myComponents/control-previo/control-previo.component';
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
 import { TablaToFirmarComponent } from './myComponents/tablaToFirmar/tablaToFirmar.component';
+import { RealizarFirmaComponent } from "./myComponents/realizarFirma/realizarFirma.component"
 //import { ModalTiny } from './myComponents/modal/modaltiny.component';
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { AlertComponent } from './myComponents/modal/alert.component';
 import {DatosOrdenComponent} from './modales/controlprevio/modalcontrolprevio.component';
+
 
 import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
 import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.component';
@@ -50,10 +52,12 @@ import {ControlPrevioService }from './services/ControlPrevio/control-previo.serv
     AlertDemoComponent, 
     AlertComponent,     
     ConfirmComponent,
+    DatosOrdenComponent,
     RegistroSIAFComponent,
     ListarOrdenesComponent,
     ControlPrevioComponent,
     DatosOrdenComponent,
+    RealizarFirmaComponent,
     /* NgTableComponent,
     NgTableFilteringDirective,
     NgTablePagingDirective,
