@@ -20,10 +20,12 @@ import { NotificationsComponent } from './componentsDash/notifications/notificat
 
 import { TableDemoComponent } from './myComponents/probando/prueba.component';
 import { TablaToFirmarComponent } from './myComponents/tablaToFirmar/tablaToFirmar.component';
+import { RealizarFirmaComponent } from "./myComponents/realizarFirma/realizarFirma.component"
 //import { ModalTiny } from './myComponents/modal/modaltiny.component';
 import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { AlertComponent } from './myComponents/modal/alert.component';
+import { DatosOrdenComponent } from './modales/controlprevio/modalcontrolprevio.component';
 
 import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
 import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.component';
@@ -31,6 +33,7 @@ import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.co
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; 
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +47,10 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     AlertDemoComponent, 
     AlertComponent,     
     ConfirmComponent,
+    DatosOrdenComponent,
     RegistroSIAFComponent,
     ListarOrdenesComponent,
+    RealizarFirmaComponent,
     /* NgTableComponent,
     NgTableFilteringDirective,
     NgTablePagingDirective,
@@ -65,7 +70,7 @@ import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
     BootstrapModalModule, 
 
   ],
-  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent],
+  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent, DatosOrdenComponent, ListarOrdenesComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TablaToFirmar } from '../tabla/tablaToFirmar';
 import { ConfirmComponent } from '../../modales/confirm/confirm.component';
 import { DialogService } from "ng2-bootstrap-modal";
-
+  
 @Component({
   selector: 'tabla-firma',
   templateUrl: './tablaToFirmar.component.html'
@@ -13,16 +13,18 @@ export class TablaToFirmarComponent implements OnInit {
     {
       title: 'Nro Expendiente',
       name: 'nroExpediente',
-      filtering: { filterString: '', placeholder: 'Filtrar por Nro Expediente' }
+      filtering: { filterString: '', placeholder: 'Filtrar por Nro Expediente' },
+      className: ['centrar']
     },
     {
       title: 'Nro Orden',
       name: 'nroOrden',
       sort: false,
-      filtering: { filterString: '', placeholder: 'Filtrar por Nro de Orden' }
+      filtering: { filterString: '', placeholder: 'Filtrar por Nro de Orden' },
+      className: ['centrar']
     },
-    { title: 'Fecha', className: 'text-warning', name: 'fecha' },
-    { title: '', name: 'firmar' }
+    { title: 'Fecha',   className: ['centrar'], name: 'fecha' },
+    {title: '', name: 'actionFirmar', sort:false, className: ['accepter-col-action','width="5px"']}
 
   ];
   public page: number = 1;
@@ -35,8 +37,10 @@ export class TablaToFirmarComponent implements OnInit {
     paging: true,
     sorting: { columns: this.columns },
     filtering: { filterString: '' },
-    className: ['table-striped', 'table-bordered']
+    className: ['table-striped', 'table-bordered','centrar'],
+   
   };
+
 
   private data: Array<any> = TablaToFirmar;
 
@@ -138,6 +142,9 @@ export class TablaToFirmarComponent implements OnInit {
 
   public onCellClick(data: any): any {
     console.log(data);
+    if (data.column === 'actionFirmar'){
+      this.showConfirm();
+    }
   }
 
   showConfirm() {

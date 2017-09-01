@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
+import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
+import { TableData } from './tabladata';
 
-import { TableData } from '../../myComponents/tabla/table-data';
-
-export interface ConfirmModel {
+export interface DatosOrdenModel {
     title: string;
-    message: string;
+    ordcompra: string;
+    proveedor: string;
+    fecha: string;
+    observacion: string;
 }
 
 @Component({
-    selector: 'modal-listarOrdenes',
-    templateUrl: './listarOrdenes.component.html',
+    selector: 'datosordenmodal',
+    templateUrl:'./modalcontrolprevio.component.html', 
     styles: [`
+<<<<<<< HEAD:src/app/modales/listarOrdenes/listarOrdenes.component.ts
     .modal-dialog{
         width: 850px;
         height  : 350px;
@@ -23,10 +26,26 @@ export interface ConfirmModel {
         overflow-y: auto;
       }
   `],
+=======
+            .modal-dialog{
+                width: 850px;
+                height  : 350px;
+            }
+            .modal-body {
+                width: 850px;
+                height: 350px;
+                overflow-y: auto;
+            }
+            `],
+
+>>>>>>> 6064ae11495b69d7a2318a8ee67aba4b708d3e02:src/app/modales/controlprevio/modalcontrolprevio.component.ts
 })
-export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
+export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> implements DatosOrdenModel {
     title: string;
-    message: string;
+    ordcompra: string;
+    proveedor: string;
+    fecha: string;
+    observacion: string;
 
     orden: Array<any> = [
         {
@@ -67,6 +86,7 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
 
     public rows: Array<any> = [];
     public columns: Array<any> = [
+<<<<<<< HEAD:src/app/modales/listarOrdenes/listarOrdenes.component.ts
         { title: 'Nro Orden', name: 'nro_orden' },
         { title: 'Id Proveedor', name: 'id_proveedor', sort: false },
         { title: 'Fecha', className: ['office-header', 'text-success'], name: 'fecha' },
@@ -75,6 +95,30 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
         { title: 'Precio Unitario', name: 'precio_unitario', sort: '' },
         { title: 'Meta', name: 'meta', sort: '' },
         { title: 'Partida', name: 'partida', filtering: {filterString: '', placeholder: 'Filtrar por Partida'}}
+=======
+        { title: 'Articulo', name: 'articulo', filtering: { filterString: '', placeholder: 'Filter by articulo' } },
+        {
+            title: 'Unidad',
+            name: 'unidad',
+            filtering: { filterString: '', placeholder: 'Filter by unidad' }
+        },
+          {
+            title: 'Precio',
+            name: 'precio',
+            filtering: { filterString: '', placeholder: 'Filter by precio' }
+          },
+        {
+            title: 'Meta',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by meta' }
+        },
+        {
+            title: 'Partida',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by partida' }
+        },
+
+>>>>>>> 6064ae11495b69d7a2318a8ee67aba4b708d3e02:src/app/modales/controlprevio/modalcontrolprevio.component.ts
     ];
     public page: number = 1;
     public itemsPerPage: number = 5;
@@ -95,15 +139,14 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
         //informacion de tabla
         this.length = this.data.length;
     }
-    confirm() {
-        // we set dialog result as true on click on confirm button, 
-        // then we can get dialog result from caller code 
-        this.result = true;
-        this.close();
-    }
 
+    
     // Informacion para la tabla
 
+<<<<<<< HEAD:src/app/modales/listarOrdenes/listarOrdenes.component.ts
+=======
+
+>>>>>>> 6064ae11495b69d7a2318a8ee67aba4b708d3e02:src/app/modales/controlprevio/modalcontrolprevio.component.ts
     public ngOnInit(): void {
         this.onChangeTable(this.config);
     }
@@ -200,4 +243,6 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
         console.log(data);
     }
 
+
 }
+
