@@ -1,0 +1,26 @@
+[
+    {
+        "id_proveedor": 1,
+        "nombre": "Artesco",
+        "telefono": "054-454545",
+        "direccion": "Alameda Grau I-20 , Miraflores"
+    },
+    {
+        "id_proveedor": 2,
+        "nombre": "Layconsa",
+        "telefono": "054-450545",
+        "direccion": "Alameda Jose Galvez J-20 , Paucarpata"
+    },
+    {
+        "id_proveedor": 3,
+        "nombre": "Susy",
+        "telefono": "054-400545",
+        "direccion": "Urb. Bella Vista P-20 , Yanahuara"
+    },
+    {
+        "id_proveedor": 4,
+        "nombre": "Gloria",
+        "telefono": "054-454005",
+        "direccion": "Urb. La Rinconada S/N , Hunter"
+    }
+]
