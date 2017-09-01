@@ -1,8 +1,22 @@
 [
     {
         "id_articulo": 1,
-        "precio": 10.00,
+        "precio": 30.00,
         "id_cat_art": 1
-        
+    },
+    {
+        "id_articulo": 2,
+        "precio": 40.00,
+        "id_cat_art": 1
+    },
+    {
+        "id_articulo": 3,
+        "precio": 80.00,
+        "id_cat_art": 2
+    },
+    {
+        "id_articulo": 4,
+        "precio": 1800.00,
+        "id_cat_art": 5
     }
 ]

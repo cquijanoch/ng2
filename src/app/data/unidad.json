@@ -1,6 +1,54 @@
 [
     {
         "id_unidad": 1,
-        "nombre": "metros"
+        "nombre": "Unidad"
+    },
+    {
+        "id_unidad": 2,
+        "nombre": "Kilogramo"
+    },
+    {
+        "id_unidad": 3,
+        "nombre": "Gramo"
+    },
+    {
+        "id_unidad": 4,
+        "nombre": "Miligramo"
+    },
+    {
+        "id_unidad": 5,
+        "nombre": "Tonelada"
+    },
+    {
+        "id_unidad": 6,
+        "nombre": "Litro"
+    },
+    {
+        "id_unidad": 7,
+        "nombre": "Kilometro"
+    },
+    {
+        "id_unidad": 8,
+        "nombre": "Metro"
+    },
+    {
+        "id_unidad": 9,
+        "nombre": "Centimetro"
+    },
+    {
+        "id_unidad": 10,
+        "nombre": "Porcion"
+    },
+    {
+        "id_unidad": 11,
+        "nombre": "Paquete"
+    },
+    {
+        "id_unidad": 12,
+        "nombre": "Caja"
+    },
+    {
+        "id_unidad": 13,
+        "nombre": "Bolsa"
     }
 ]
