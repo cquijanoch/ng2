@@ -1,48 +1,65 @@
 import { Component } from '@angular/core';
-import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
+import { DialogComponent, DialogService } from 'ng2-bootstrap-modal';
+import { TableData } from './tabladata';
 
-import { TableData } from '../../myComponents/tabla/table-data';
-
-export interface ConfirmModel {
+export interface DatosOrdenModel {
     title: string;
-    message: string;
+    ordcompra: string;
+    proveedor: string;
+    fecha: string;
+    observacion: string;
 }
 
 @Component({
-    selector: 'modal-listarOrdenes',
-    templateUrl: './listarOrdenes.component.html',
+    selector: 'datosordenmodal',
+    templateUrl:'./modalcontrolprevio.component.html', 
     styles: [`
-    .modal-dialog{
-        width: 850px;
-        height  : 350px;
-    }
-    .modal-body {
-        width: 850px;
-        height: 350px;
-        overflow-y: auto;
-      }
-  `],
+            .modal-dialog{
+                width: 850px;
+                height  : 350px;
+            }
+            .modal-body {
+                width: 850px;
+                height: 350px;
+                overflow-y: auto;
+            }
+            `],
+
 })
-export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
+export class DatosOrdenComponent extends DialogComponent<DatosOrdenModel, null> implements DatosOrdenModel {
     title: string;
-    message: string;
+    ordcompra: string;
+    proveedor: string;
+    fecha: string;
+    observacion: string;
 
     //tabla
     private data: Array<any> = TableData;
 
     public rows: Array<any> = [];
     public columns: Array<any> = [
-        { title: 'Name', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
+        { title: 'Articulo', name: 'articulo', filtering: { filterString: '', placeholder: 'Filter by articulo' } },
         {
-            title: 'Position',
-            name: 'position',
-            sort: false,
-            filtering: { filterString: '', placeholder: 'Filter by position' }
+            title: 'Unidad',
+            name: 'unidad',
+            filtering: { filterString: '', placeholder: 'Filter by unidad' }
         },
-        { title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc' },
-        { title: 'Extn.', name: 'ext', sort: '', filtering: { filterString: '', placeholder: 'Filter by extn.' } },
-        { title: 'Start date', className: 'text-warning', name: 'startDate' },
-        { title: 'Salary ($)', name: 'salary' }
+          {
+            title: 'Precio',
+            name: 'precio',
+            filtering: { filterString: '', placeholder: 'Filter by precio' }
+          },
+        {
+            title: 'Meta',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by meta' }
+        },
+        {
+            title: 'Partida',
+            name: 'meta',
+            filtering: { filterString: '', placeholder: 'Filter by partida' }
+        },
+
     ];
     public page: number = 1;
     public itemsPerPage: number = 10;
@@ -63,17 +80,9 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
         //informacion de tabla
         this.length = this.data.length;
     }
-    confirm() {
-        // we set dialog result as true on click on confirm button, 
-        // then we can get dialog result from caller code 
-        this.result = true;
-        this.close();
-    }
 
+    
     // Informacion para la tabla
-
-
-
 
 
     public ngOnInit(): void {
@@ -172,4 +181,6 @@ export class ListarOrdenesComponent extends DialogComponent<ConfirmModel, boolea
         console.log(data);
     }
 
+
 }
+

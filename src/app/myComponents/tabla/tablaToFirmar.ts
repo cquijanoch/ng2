@@ -6,4 +6,4 @@ export const TablaToFirmar: Array<any> = [
       'monto': '100',
       'actionFirmar': '<span class="label label-mini label-info">Firmar</span>'
     }
-  ];
+  ];  

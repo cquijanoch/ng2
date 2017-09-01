@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TablaToFirmar } from '../tabla/tablaToFirmar';
 import { ConfirmComponent } from '../../modales/confirm/confirm.component';
 import { DialogService } from "ng2-bootstrap-modal";
-
+  
 @Component({
   selector: 'tabla-firma',
   templateUrl: './tablaToFirmar.component.html'

@@ -1,14 +1,35 @@
 [
     {
         "id_ord_det": 1,
-        "id_orden": 10.00,
+        "id_orden": 123,
         "id_articulo": 1,
         "id_unidad": 1,
         "cantidad": 10,
-        "precio_unitario": 10.00,
-        "valor_venta": 10.00,
+        "precio_unitario": 30.00,
+        "valor_venta": 40.00,
         "meta": 15,
         "partida": "2.1.1.2.3.1"
-        
+    },
+    {
+        "id_ord_det": 2,
+        "id_orden": 123,
+        "id_articulo": 2,
+        "id_unidad": 1,
+        "cantidad": 10,
+        "precio_unitario": 40.00,
+        "valor_venta": 50.00,
+        "meta": 15,
+        "partida": "2.1.1.2.3.1"
+    },
+    {
+        "id_ord_det": 3,
+        "id_orden": 123,
+        "id_articulo": 3,
+        "id_unidad": 1,
+        "cantidad": 10,
+        "precio_unitario": 80.00,
+        "valor_venta": 90.00,
+        "meta": 15,
+        "partida": "2.1.1.2.3.1"
     }
 ]

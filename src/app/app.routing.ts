@@ -26,7 +26,7 @@ const routes: Routes =[
     { path: 'registroSIAF',  component: RegistroSIAFComponent }
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [
     CommonModule,
     BrowserModule,
