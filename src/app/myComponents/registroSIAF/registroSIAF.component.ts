@@ -1,7 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {TableData} from '../tabla/table-data';
+
 import { ListarOrdenesComponent } from '../../modales/listarOrdenes/listarOrdenes.component';
+import { AgregarFase } from '../../modales/agregarFase/agregarFase.component';
+
 import { DialogService } from "ng2-bootstrap-modal";
+
+
 
 @Component({
   selector: 'table-SIAF',
@@ -23,21 +28,21 @@ import { DialogService } from "ng2-bootstrap-modal";
           "estado": "A",
           "id_usuario1": 0,
           "id_usuario2": 0
-      },
-      {
-        "id_siaf": 2,
-        "nro_expediente": 30,
-        "id_orden": 0,
-        "fase": "C",
-        "certificado_anual": 0,
-        "tipo_documento": 0,
-        "nro_documento": 0,
-        "fecha_documento": 0,
-        "monto": 100,
-        "estado": "A",
-        "id_usuario1": 0,
-        "id_usuario2": 0
-    }
+      }
+    //   ,{
+    //     "id_siaf": 2,
+    //     "nro_expediente": 30,
+    //     "id_orden": 0,
+    //     "fase": "C",
+    //     "certificado_anual": 0,
+    //     "tipo_documento": 0,
+    //     "nro_documento": 0,
+    //     "fecha_documento": 0,
+    //     "monto": 100,
+    //     "estado": "A",
+    //     "id_usuario1": 0,
+    //     "id_usuario2": 0
+    // }
   ];
 
     public rows:Array<any> = [];
@@ -198,5 +203,20 @@ import { DialogService } from "ng2-bootstrap-modal";
       // setTimeout(()=>{
       //     disposable.unsubscribe();
       // },10000);
+  }
+
+  AgregarFase(){
+    let disposable = this.dialogService.addDialog(AgregarFase, {
+      title:'Agregar Fase', 
+      message:'Ingrese Información de Documentos'})
+      .subscribe((isConfirmed)=>{
+          //We get dialog result
+          if(isConfirmed) {
+              alert('Acepto');
+          }
+          else {
+              alert('No Acepto');
+          }
+      });
   }
   }

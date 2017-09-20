@@ -31,6 +31,7 @@ import { modalRealizarFirmaComponent } from './modales/realizarFirma/modalrealiz
 
 import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
 import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.component';
+import { AgregarFase } from './modales/agregarFase/agregarFase.component';
 
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap'; 
@@ -55,6 +56,7 @@ import {ControlPrevioService }from './services/ControlPrevio/control-previo.serv
     DatosOrdenComponent,
     RegistroSIAFComponent,
     ListarOrdenesComponent,
+    AgregarFase,
     ControlPrevioComponent,
     DatosOrdenComponent,
     modalRealizarFirmaComponent,
@@ -78,7 +80,7 @@ import {ControlPrevioService }from './services/ControlPrevio/control-previo.serv
     BootstrapModalModule, 
 
   ],
-  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent,DatosOrdenComponent,modalRealizarFirmaComponent],
+  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent,AgregarFase,DatosOrdenComponent,modalRealizarFirmaComponent],
   providers: [
     ControlPrevioService
   ],

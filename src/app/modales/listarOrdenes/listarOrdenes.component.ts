@@ -19,7 +19,6 @@ export interface ConfirmModel {
     }
     .modal-body {
         width: 850px;
-        height: 350px;
         overflow-y: auto;
       }
   `],
