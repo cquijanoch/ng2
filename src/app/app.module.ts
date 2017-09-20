@@ -27,7 +27,7 @@ import { AlertDemoComponent } from './myComponents/modal/alertdemo.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { AlertComponent } from './myComponents/modal/alert.component';
 import {DatosOrdenComponent} from './modales/controlprevio/modalcontrolprevio.component';
-
+import { modalRealizarFirmaComponent } from './modales/realizarFirma/modalrealizarFirma.component';  
 
 import { RegistroSIAFComponent } from './myComponents/registroSIAF/registroSIAF.component';
 import { ListarOrdenesComponent } from './modales/listarOrdenes/listarOrdenes.component';
@@ -57,6 +57,7 @@ import {ControlPrevioService }from './services/ControlPrevio/control-previo.serv
     ListarOrdenesComponent,
     ControlPrevioComponent,
     DatosOrdenComponent,
+    modalRealizarFirmaComponent,
     RealizarFirmaComponent,
     /* NgTableComponent,
     NgTableFilteringDirective,
@@ -77,7 +78,7 @@ import {ControlPrevioService }from './services/ControlPrevio/control-previo.serv
     BootstrapModalModule, 
 
   ],
-  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent,DatosOrdenComponent],
+  entryComponents:[AlertDemoComponent, AlertComponent, ConfirmComponent,ListarOrdenesComponent,DatosOrdenComponent,modalRealizarFirmaComponent],
   providers: [
     ControlPrevioService
   ],

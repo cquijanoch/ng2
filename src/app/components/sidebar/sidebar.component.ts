@@ -8,15 +8,15 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    /* { path: 'dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: 'user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: 'table-list', title: 'Table List',  icon:'content_paste', class: '' },
+    { path: 'table-list', title: 'Table List',  icon:'content_paste', class: '' }, */
     /* { path: 'typography', title: 'Typography',  icon:'library_books', class: '' }, */
-    { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
+    /*  { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
   /*   { path: 'maps', title: 'Maps',  icon:'location_on', class: '' }, */
-    { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: 'prueba', title: 'probando',  icon:'dashboard', class: '' },
-    { path: 'modales', title: 'Modal Alert',  icon:'dashboard', class: '' },
+   /*  { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: 'prueba', title: 'probando',  icon:'dashboard', class: '' }, */
+   /*  { path: 'modales', title: 'Modal Alert',  icon:'dashboard', class: '' }, */
     { path: 'realizarFirma', title: 'Realizar Firma',  icon:'dashboard', class: '' },
   { path: 'registroSIAF', title: 'Registro SIAF',  icon:'dashboard', class: '' },
   { path: 'controlprevio', title: 'Control Previo',  icon:'dashboard', class: '' },
